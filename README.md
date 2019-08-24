@@ -49,8 +49,13 @@ In gathering the data for Trump's Twitter account @therealdonaldtrump, the Twitt
 
 After the data was pre-processed and cleaned, the exploratory data analysis(EDA) was used to determine what if any informaton could be gained for predicting campaign contributions. The EDA process was undertaken as a means for a regression model trying to predict actual campaign contributions given to Trump the following day.  
 
+Trump averaged just under $150k per day during the specified time period and his tweets almost averaged one million likes per day. When you break it down each tweet that he made was favorited on average 100k times. There were two outliers for his campaign contributions. on June 18th and 19th Trump's campaign raised almost $2 million. This bump in donations was due to the fact he officially announced his re-election bid on June 18th.[[3]](https://www.usatoday.com/story/news/politics/2019/05/31/donald-trump-formally-declare-re-election-bid-june-18-florida/1303932001/) Wednesdays had the highest correlation to his donation amounts while Sundays and Mondays had negative correlations. This was confirmed by both a time series analysis and a correlation map.  
 
+[Add pic here]  
+
+I used two bag-of-words models to try and find correlations between Trump's tweets and his campaign donations. First, countveoctorizing his tweets did reveal some correlation between conspiracy words such as: rigged, hearings, washed, emails, etc. The 
 
 ## Resources 
 - [[1] How Money Affects Election, Maggie Koerth-Baker](https://fivethirtyeight.com/features/money-and-elections-a-complicated-love-story/)
 - [[2] FEC.org](fec.gov/about/mission-and-history/)
+- [[3] USA Today- Donald Trump to formally declare his re-election bid on June 18 in Orlando](https://www.usatoday.com/story/news/politics/2019/05/31/donald-trump-formally-declare-re-election-bid-june-18-florida/1303932001/)
