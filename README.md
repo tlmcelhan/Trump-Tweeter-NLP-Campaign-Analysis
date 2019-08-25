@@ -8,17 +8,12 @@ With the upcoming 2020 presidential election and the ever-growing importance of 
 ## Data dicionary  
 |Feature|Type|Dataset|Description|
 |-------|----|-------|-----------|
-|text|object|trump_tweets.csv|Text from the @therealdonaldtrump twitter account.|
-|created_at|object|trump_tweets.csv|Date and time of tweet post.|
-|favorite_count|integer|trump_tweets.csv|Number of times the tweet post has been marked as a user's favorite.|
-|title_char_count|integer|reddit_clean_dataset|The number of characters in the title of a sub-reddit post.|
-|selftext_char_count|integer|reddit_clean_dataset|The number of characters in the body of a sub-reddit post.|
-|title_word_count|integer|reddit_clean_dataset|The number of words in the title of a sub-reddit post.|
-|selftext_word_count|integer|reddit_clean_dataset|The number of words in the body of a sub-reddit post.|
-|compound|float|sentiment_dataset|The compound sentiment score of a sub-reddits title|
-|neg|float|sentiment_dataset|The negative sentiment score of a sub-reddits title|
-|neu|float|sentiment_dataset|The neutral sentiment score of a sub-reddits title|
-|pos|float|sentiment_dataset|The positive sentiment score of a sub-reddits title|  
+|text|object|full_dataset.csv|Text from the @therealdonaldtrump twitter account.|
+|created_at|object|full_dataset.csv|Date and time of tweet post.|
+|favorite_count|integer|full_dataset.csv|Number of times the tweet post has been marked as a user's favorite.|
+|tweet_count|integer|full_dataset.csv|The number of twitter posts on the current day.|
+|contribution_receipt_amount|float|full_dataset.csv|Daily total campaign donations dollar amount.|
+
 
 ## Repo Structure  
 - code folder  
