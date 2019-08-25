@@ -48,7 +48,20 @@ Trump averaged just under $150k per day during the specified time period and his
 
 [Add pic here]  
 
-I used two bag-of-words models to try and find correlations between Trump's tweets and his campaign donations. First, countveoctorizing his tweets did reveal some correlation between conspiracy words such as: rigged, hearings, washed, emails, etc. The 
+I used two bag-of-words models to try and find correlations between Trump's tweets and his campaign donations. First, countveoctorizing his tweets did reveal some correlation between conspiracy words such as: rigged, hearings, washed, emails, etc. The top words correlated with Trump's contribution amounts were subjectively negative such as breaking, mistake, and unhappy.  
+
+[Add pic here] 
+
+This was in contrast to the words found to be negatively correlated with his donaions, which seemed subjectively more positive. See below:   
+
+[Add pic here]  
+
+Also, notice that the more Trump mentions the Mexico Border wall the lower his contributions are.  
+
+The second bag-of-words model I used was Term Frequency-Inverse Document Frequency(TF-IDF). The purpose of using this model in addition to countvecotor was to look for the importance of words and phrases in a document(tweet) in relationship to the corpus(all his tweets). The model did pick up on high correlation from Trump mentioning Democrats to his contribution amounts.  
+[Add pic here]   
+
+
 
 ## Resources 
 - [[1] How Money Affects Election, Maggie Koerth-Baker](https://fivethirtyeight.com/features/money-and-elections-a-complicated-love-story/)
