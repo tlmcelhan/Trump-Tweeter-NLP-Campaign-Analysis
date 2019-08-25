@@ -75,12 +75,9 @@ The time series analysis confirmed that there is seasonality in Trump's donation
 
 Finally, the modeling process was used to detemine whether or not there was signal in the tweets that could predict donation amounts. The first model used was a regression model trying to predict actual donation amounts. Results were vey bad and the accuracy was non-existent. The final models used were classification, including logistic regression, random forest classification, Gaussian Bayes, and XGboost. There is some signal coming from Trump's tweets to predict what his campaign donations are going to be. Although, none of the models were able to predict whether or not his donations would go up or down with an accuracy above 64.4%. Intuitively this might make sense. Trump's tweets tend to be reactionary to events happening in the world, thus the predictive ability of his tweets might be residual signal from other factors. As mentioned in the original cleaning of the data it might make sense to look at other information such as who specifically gave donations or at what frequency. My conclusion is that there isn't any significant reason to believe the words in Trump's tweets influence his campaign donations. 
 
-## Conclusions  
+## Conclusions & Further Study
 
-
-
-
-## Further Study and Recommendatons
+With only a 64% accuracy in predicting whether or not Trump's campaign donations will go up or down, his tweets don't seem to have a significant effect on his donations. 
 
 ## Resources 
 - [[1] How Money Affects Election, Maggie Koerth-Baker](https://fivethirtyeight.com/features/money-and-elections-a-complicated-love-story/)
