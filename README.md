@@ -58,12 +58,32 @@ This was in contrast to the words found to be negatively correlated with his don
 
 Also, notice that the more Trump mentions the Mexico Border wall the lower his contributions are.  
 
-The second bag-of-words model I used was Term Frequency-Inverse Document Frequency(TF-IDF). The purpose of using this model in addition to countvecotor was to look for the importance of words and phrases in a document(tweet) in relationship to the corpus(all his tweets). The model did pick up on high correlation from Trump mentioning Democrats to his contribution amounts.  
+The second bag-of-words model I used was Term Frequency-Inverse Document Frequency(TF-IDF). The purpose of using this model in addition to countvecotor was to look for the importance of words and phrases in a document(tweet) in relationship to the corpus(all his tweets). The model did pick up on high correlation from Trump mentioning Democrats to his contribution amounts.    
 [Add pic here]   
 
+Given the overall subjective negativity observed in the bag-of-words models I did do a sentiment analysis on Trump's tweets. There was a small correlation to donations, but the decision was made that the sentiment signal was not strong enough to consider significant.  
 
+Using Singular Value Decomposition(SVD), I ran a LSA transformation and analysis on both the countvectorized and tf-idf transformed tweets, given they both had some correlation to the campaign donations. While the LSA components for the tf-idf tweets didn't account for any  more variance in the data than the non-transformed features, the LSA components for the countvector transformed data did give some more signal than the features alone.  
+
+[Add pic here]  
+
+In the initial EDA there was some correlation to day of the week and donatations. This prompted a time series analysis of the data seperate from the NLP analysis. 
+
+[Add pic here]  
+
+The time series analysis confirmed that there is seasonality in Trump's donations. Wednesday's do get a bump in donations and weekends are usually slower. This could be cause by multiple factors, but intuitively people tend to be less financialy active on the weekends, due to institute closures. There is also an upward trend in his donations. This is more than likely caused by the fact it is getting closer to the 2020 election. In fact, it is confirmed he will keep raising more money because he is the only candidate sinse Reagan to raise this much prior to this point in an election cycle.[[4]](https://www.washingtonpost.com/politics/trump-tops-100-million-in-fundraising-for-his-own-reelection/2018/10/15/9ee33594-d094-11e8-83d6-291fcead2ab1_story.html?noredirect=on)  
+
+Finally, the modeling process was used to detemine whether or not there was signal in the tweets that could predict donation amounts. The first model used was a regression model trying to predict actual donation amounts. Results were vey bad and the accuracy was non-existent. The final models used were classification, including logistic regression, random forest classification, Gaussian Bayes, and XGboost. There is some signal coming from Trump's tweets to predict what his campaign donations are going to be. Although, none of the models were able to predict whether or not his donations would go up or down with an accuracy above 64.4%. Intuitively this might make sense. Trump's tweets tend to be reactionary to events happening in the world, thus the predictive ability of his tweets might be residual signal from other factors. As mentioned in the original cleaning of the data it might make sense to look at other information such as who specifically gave donations or at what frequency. My conclusion is that there isn't any significant reason to believe the words in Trump's tweets influence his campaign donations. 
+
+## Conclusions  
+
+
+
+
+## Further Study and Recommendatons
 
 ## Resources 
 - [[1] How Money Affects Election, Maggie Koerth-Baker](https://fivethirtyeight.com/features/money-and-elections-a-complicated-love-story/)
 - [[2] FEC.org](fec.gov/about/mission-and-history/)
 - [[3] USA Today- Donald Trump to formally declare his re-election bid on June 18 in Orlando](https://www.usatoday.com/story/news/politics/2019/05/31/donald-trump-formally-declare-re-election-bid-june-18-florida/1303932001/)
+- [[4] Trump tops $100 million in fundraising for his own re-election-Washington Post](https://www.washingtonpost.com/politics/trump-tops-100-million-in-fundraising-for-his-own-reelection/2018/10/15/9ee33594-d094-11e8-83d6-291fcead2ab1_story.html?noredirect=on)
