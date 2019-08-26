@@ -46,30 +46,30 @@ After the data was pre-processed and cleaned, the exploratory data analysis(EDA)
 
 Trump averaged just under $150k per day during the specified time period and his tweets almost averaged one million likes per day. When you break it down each tweet that he made was favorited on average 100k times. There were two outliers for his campaign contributions. on June 18th and 19th Trump's campaign raised almost $2 million. This bump in donations was due to the fact he officially announced his re-election bid on June 18th.[[3]](https://www.usatoday.com/story/news/politics/2019/05/31/donald-trump-formally-declare-re-election-bid-june-18-florida/1303932001/) Wednesdays had the highest correlation to his donation amounts while Sundays and Mondays had negative correlations. This was confirmed by both a time series analysis and a correlation map.  
 
-[Add pic here]  
+![](./images/weekday_corr.png)  
 
 I used two bag-of-words models to try and find correlations between Trump's tweets and his campaign donations. First, countveoctorizing his tweets did reveal some correlation between conspiracy words such as: rigged, hearings, washed, emails, etc. The top words correlated with Trump's contribution amounts were subjectively negative such as breaking, mistake, and unhappy.  
 
-[Add pic here] 
+![](./images/countvec_corr_pos.png) 
 
 This was in contrast to the words found to be negatively correlated with his donaions, which seemed subjectively more positive. See below:   
 
-[Add pic here]  
+![](./images/countvec_corr_neg.png) 
 
 Also, notice that the more Trump mentions the Mexico Border wall the lower his contributions are.  
 
 The second bag-of-words model I used was Term Frequency-Inverse Document Frequency(TF-IDF). The purpose of using this model in addition to countvecotor was to look for the importance of words and phrases in a document(tweet) in relationship to the corpus(all his tweets). The model did pick up on high correlation from Trump mentioning Democrats to his contribution amounts.    
-[Add pic here]   
+![](./images/tf-idf_corr.png)   
 
 Given the overall subjective negativity observed in the bag-of-words models I did do a sentiment analysis on Trump's tweets. There was a small correlation to donations, but the decision was made that the sentiment signal was not strong enough to consider significant.  
 
 Using Singular Value Decomposition(SVD), I ran a LSA transformation and analysis on both the countvectorized and tf-idf transformed tweets, given they both had some correlation to the campaign donations. While the LSA components for the tf-idf tweets didn't account for any  more variance in the data than the non-transformed features, the LSA components for the countvector transformed data did give some more signal than the features alone.  
 
-[Add pic here]  
+![](./images/cvec_lsa.png) 
 
 In the initial EDA there was some correlation to day of the week and donatations. This prompted a time series analysis of the data seperate from the NLP analysis. 
 
-[Add pic here]  
+![](./images/time_series.png) 
 
 The time series analysis confirmed that there is seasonality in Trump's donations. Wednesday's do get a bump in donations and weekends are usually slower. This could be cause by multiple factors, but intuitively people tend to be less financialy active on the weekends, due to institute closures. There is also an upward trend in his donations. This is more than likely caused by the fact it is getting closer to the 2020 election. In fact, it is confirmed he will keep raising more money because he is the only candidate sinse Reagan to raise this much prior to this point in an election cycle.[[4]](https://www.washingtonpost.com/politics/trump-tops-100-million-in-fundraising-for-his-own-reelection/2018/10/15/9ee33594-d094-11e8-83d6-291fcead2ab1_story.html?noredirect=on)  
 
